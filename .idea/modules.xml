@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SimpleZscoreCalculator/SimpleZscoreCalculator.iml" filepath="$PROJECT_DIR$/SimpleZscoreCalculator/SimpleZscoreCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleZscoreCalculatorProject.iml" filepath="$PROJECT_DIR$/SimpleZscoreCalculatorProject.iml" />
+    </modules>
+  </component>
+</project>
+

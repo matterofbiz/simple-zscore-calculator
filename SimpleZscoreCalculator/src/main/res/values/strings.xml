@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Simple Z-score Calculator</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Simple Z-score Calculator</string>
+    <string name="logodesc">Matter of BIZ logo</string>
+    <string name="helptext">
+        Developed by \'Matter of BIZ\' (London, UK). Business Research &amp; Applications Limited \u00A92014\n\nThis software uses Apache Commons Math Library, licensed under Apache License, Version 2.0: http://www.apache.org/licenses/LICENSE-2.0\n\n
+    </string>
+    <string name="helpok">OK</string>
+
+    <string name="total_assets">Total Assets</string>
+    <string name="total_debt">Total Debt</string>
+    <string name="current_assets">Current Assets</string>
+    <string name="INV">Inventories</string>
+    <string name="current_liabilities">Current Liabilities</string>
+    <string name="retained_earnings">Retained Earnings</string>
+    <string name="ebit">EBIT</string>
+    <string name="PBT">Profit Before Tax</string>
+    <string name="equity">Equity</string>
+    <string name="sales">Sales</string>
+    <string name="depn">Depreciation</string>
+    <string name="type">Company Type</string>
+    <string name="type1">Public/Quoted Company</string>
+    <string name="type2">Private Company</string>
+    <string name="type3">Non-manufacturing</string>
+    <string name="type4">UK Company</string>
+    <string name="calculate">Calculate Z-score</string>
+</resources>

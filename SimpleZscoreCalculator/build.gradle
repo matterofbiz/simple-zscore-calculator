@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.+'
+    }
+}
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:21.+'
+    compile files('libs/commons-math-2.2.jar')
+}
+
+android {
+    compileSdkVersion "android-L"
+    buildToolsVersion '20.0.0'
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 20
+    }
+}
