@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SimpleZscoreCalculator/SimpleZscoreCalculator.iml" filepath="$PROJECT_DIR$/SimpleZscoreCalculator/SimpleZscoreCalculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SimpleZscoreCalculatorProject.iml" filepath="$PROJECT_DIR$/SimpleZscoreCalculatorProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple-zscore-calculator.iml" filepath="$PROJECT_DIR$/simple-zscore-calculator.iml" />
     </modules>
   </component>
 </project>
