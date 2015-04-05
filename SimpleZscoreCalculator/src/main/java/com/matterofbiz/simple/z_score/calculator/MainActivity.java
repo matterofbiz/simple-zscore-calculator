@@ -5,20 +5,86 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Spinner;
 
 import org.apache.commons.math.MathException;
 
-public class MainActivity extends Activity {
+import static android.widget.Spinner.*;
+
+public class MainActivity extends Activity implements OnItemSelectedListener {
+
+    Spinner spinnertype;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppRater.app_launched(this);
+        spinnertype=(Spinner)findViewById(R.id.type);
+        spinnertype.setOnItemSelectedListener(this);
+
+        // Get all grouped UI elements
+        findViewsById();
     }
 
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        int zModel;
+        zModel = spinnertype.getSelectedItemPosition();
+        // Toast.makeText(getApplicationContext(), String.valueOf(zModel), Toast.LENGTH_LONG).show();
+
+        if (zModel == 3){
+            ui4.txtINV.setVisibility(VISIBLE);
+            ui4.INVtxt.setVisibility(VISIBLE);
+            ui4.txtPBT.setVisibility(VISIBLE);
+            ui4.PBTtxt.setVisibility(VISIBLE);
+            ui4.txtSL.setVisibility(VISIBLE);
+            ui4.SLtxt.setVisibility(VISIBLE);
+            ui4.txtDEP.setVisibility(VISIBLE);
+            ui4.DEPtxt.setVisibility(VISIBLE);
+        }else{
+            ui4.txtINV.setVisibility(View.GONE);
+            ui4.INVtxt.setVisibility(View.GONE);
+            ui4.txtPBT.setVisibility(View.GONE);
+            ui4.PBTtxt.setVisibility(View.GONE);
+            ui4.txtSL.setVisibility(View.GONE);
+            ui4.SLtxt.setVisibility(View.GONE);
+            ui4.txtDEP.setVisibility(View.GONE);
+            ui4.DEPtxt.setVisibility(View.GONE);
+        }
+    }
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Do nothing
+    }
+
+    class UItype4 {
+        TextView txtINV;
+        EditText INVtxt;
+        TextView txtPBT;
+        EditText PBTtxt;
+        TextView txtSL;
+        EditText SLtxt;
+        TextView txtDEP;
+        EditText DEPtxt;
+    }
+    UItype4 ui4 = new UItype4();
+
+    private void findViewsById(){
+        ui4.txtINV = (TextView) findViewById (R.id.txtINV);
+        ui4.INVtxt = (EditText) findViewById(R.id.Edit_INV);
+        ui4.txtPBT = (TextView) findViewById (R.id.txtPBT);
+        ui4.PBTtxt = (EditText) findViewById(R.id.Edit_PBT);
+        ui4.txtSL = (TextView) findViewById (R.id.txtSales);
+        ui4.SLtxt = (EditText) findViewById(R.id.Edit_Sales);
+        ui4.txtDEP = (TextView) findViewById (R.id.txtDepn);
+        ui4.DEPtxt = (EditText) findViewById(R.id.Edit_Depn);
+    }
 
     public void calculateZ(View button) throws MathException {
 
@@ -69,14 +135,11 @@ public class MainActivity extends Activity {
         // get the references to the widgets
         EditText TAtxt = (EditText) findViewById(R.id.Edit_TotAssets);
         EditText CAtxt = (EditText) findViewById(R.id.Edit_CurAssets);
-        EditText INVtxt = (EditText) findViewById(R.id.Edit_INV);
         EditText TDtxt = (EditText) findViewById(R.id.Edit_TotDebt);
         EditText CDtxt = (EditText) findViewById(R.id.Edit_CurDebt);
         EditText REtxt = (EditText) findViewById(R.id.Edit_RetEar);
         EditText EBtxt = (EditText) findViewById(R.id.Edit_Ebit);
-        EditText PBTtxt = (EditText) findViewById(R.id.Edit_PBT);
-        EditText SLtxt = (EditText) findViewById(R.id.Edit_Sales);
-        EditText DEPtxt = (EditText) findViewById(R.id.Edit_Depn);
+
         Spinner typespn = (Spinner) findViewById(R.id.type);
         String msgZ;
 
@@ -87,8 +150,8 @@ public class MainActivity extends Activity {
         if (CAtxt.getText().length() > 0) {
             CA = Float.parseFloat(CAtxt.getText().toString());
         }
-        if (INVtxt.getText().length() > 0) {
-            INV = Float.parseFloat(INVtxt.getText().toString());
+        if (ui4.INVtxt.getText().length() > 0) {
+            INV = Float.parseFloat(ui4.INVtxt.getText().toString());
         }
         if (TDtxt.getText().length() > 0) {
             TD = Float.parseFloat(TDtxt.getText().toString());
@@ -102,14 +165,14 @@ public class MainActivity extends Activity {
         if (EBtxt.getText().length() > 0) {
             EB = Float.parseFloat(EBtxt.getText().toString());
         }
-        if (PBTtxt.getText().length() > 0) {
-            PBT = Float.parseFloat(PBTtxt.getText().toString());
+        if (ui4.PBTtxt.getText().length() > 0) {
+            PBT = Float.parseFloat(ui4.PBTtxt.getText().toString());
         }
-        if (SLtxt.getText().length() > 0) {
-            SL = Float.parseFloat(SLtxt.getText().toString());
+        if (ui4.SLtxt.getText().length() > 0) {
+            SL = Float.parseFloat(ui4.SLtxt.getText().toString());
         }
-        if (DEPtxt.getText().length() > 0) {
-            DEP = Float.parseFloat(DEPtxt.getText().toString());
+        if (ui4.DEPtxt.getText().length() > 0) {
+            DEP = Float.parseFloat(ui4.DEPtxt.getText().toString());
         }
 
         Ztype = typespn.getSelectedItem().toString();
@@ -206,7 +269,6 @@ public class MainActivity extends Activity {
                 .show();
 
     }
-
 }
 
 

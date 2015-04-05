@@ -75,7 +75,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/Edit_INV"
                 android:text="@string/INV"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/Edit_INV"
@@ -83,7 +84,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/Edit_CurAssets"
                 android:layout_toRightOf="@+id/txtRE"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/txtTD"
@@ -184,7 +186,9 @@
                 android:layout_alignBaseline="@+id/Edit_PBT"
                 android:text="@string/PBT"
                 android:layout_below="@+id/txtRE"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:enabled="true"
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/Edit_PBT"
@@ -192,7 +196,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/Edit_Ebit"
                 android:layout_toRightOf="@+id/txtRE"
-                android:inputType="numberSigned|numberDecimal" />
+                android:inputType="numberSigned|numberDecimal"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/txtSales"
@@ -201,14 +206,16 @@
                 android:layout_alignBaseline="@+id/Edit_Sales"
                 android:text="@string/sales"
                 android:layout_below="@+id/txtPBT"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:visibility="gone" />
 
             <EditText android:id="@+id/Edit_Sales"
                 android:layout_width="300px"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/Edit_PBT"
                 android:layout_toRightOf="@+id/txtRE"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:visibility="gone" />
             <TextView
                 android:id="@+id/txtDepn"
                 android:layout_width="wrap_content"
@@ -216,14 +223,16 @@
                 android:layout_alignBaseline="@+id/Edit_Depn"
                 android:text="@string/depn"
                 android:layout_below="@+id/txtSales"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:visibility="gone" />
 
             <EditText android:id="@+id/Edit_Depn"
                 android:layout_width="300px"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/Edit_Sales"
                 android:layout_toRightOf="@+id/txtRE"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:visibility="gone" />
 
             <Button android:id="@+id/ButtonCalc" android:layout_height="wrap_content"
                 android:text="@string/calculate" android:onClick="calculateZ"
