@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Spinner;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import org.apache.commons.math.MathException;
 
 import static android.widget.Spinner.*;
@@ -23,6 +25,7 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
         AppRater.app_launched(this);
         spinnertype=(Spinner)findViewById(R.id.type);
