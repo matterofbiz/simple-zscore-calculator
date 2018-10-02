@@ -2,14 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.matterofbiz.simple.z_score.calculator"
-    android:versionCode="17"
-    android:versionName="1.31"
+    android:versionCode="18"
+    android:versionName="1.35"
     android:installLocation="auto" >
-
-    <uses-sdk
-        android:minSdkVersion="10"
-        android:targetSdkVersion="22"
-        tools:ignore="GradleOverrides" />
 
     <application
         android:allowBackup="true"
@@ -32,10 +27,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="8f1de5b106f87ab118bec4aeb030b0691d1c9eec" />
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

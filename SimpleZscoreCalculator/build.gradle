@@ -1,35 +1,24 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url 'https://maven.fabric.io/public' }
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
-        classpath 'io.fabric.tools:gradle:1.+'
-    }
-}
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
+apply plugin: 'kotlin-android'
 
 repositories {
-    mavenCentral()
-    maven { url 'https://maven.fabric.io/public' }
+    google()
+    jcenter()
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:22.2.1'
-    compile files('libs/commons-math-2.2.jar')
-    compile('com.crashlytics.sdk.android:crashlytics:2.5.0@aar') {
-        transitive = true;
-    }
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation files('libs/commons-math-2.2.jar')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '22.0.1'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
-        minSdkVersion 10
-        targetSdkVersion 22
+        minSdkVersion 14
+        targetSdkVersion 28
     }
 }

@@ -8,15 +8,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
-import org.apache.commons.math.MathException;
-
-import static android.widget.Spinner.*;
+import static android.widget.Spinner.VISIBLE;
 
 public class MainActivity extends Activity implements OnItemSelectedListener {
 
@@ -25,10 +20,9 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
         AppRater.app_launched(this);
-        spinnertype=(Spinner)findViewById(R.id.type);
+        spinnertype= findViewById(R.id.type);
         spinnertype.setOnItemSelectedListener(this);
 
         // Get all grouped UI elements
@@ -79,17 +73,17 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
     UItype4 ui4 = new UItype4();
 
     private void findViewsById(){
-        ui4.txtINV = (TextView) findViewById (R.id.txtINV);
-        ui4.INVtxt = (EditText) findViewById(R.id.Edit_INV);
-        ui4.txtPBT = (TextView) findViewById (R.id.txtPBT);
-        ui4.PBTtxt = (EditText) findViewById(R.id.Edit_PBT);
-        ui4.txtSL = (TextView) findViewById (R.id.txtSales);
-        ui4.SLtxt = (EditText) findViewById(R.id.Edit_Sales);
-        ui4.txtDEP = (TextView) findViewById (R.id.txtDepn);
-        ui4.DEPtxt = (EditText) findViewById(R.id.Edit_Depn);
+        ui4.txtINV = findViewById (R.id.txtINV);
+        ui4.INVtxt = findViewById(R.id.Edit_INV);
+        ui4.txtPBT = findViewById (R.id.txtPBT);
+        ui4.PBTtxt = findViewById(R.id.Edit_PBT);
+        ui4.txtSL = findViewById (R.id.txtSales);
+        ui4.SLtxt = findViewById(R.id.Edit_Sales);
+        ui4.txtDEP = findViewById (R.id.txtDepn);
+        ui4.DEPtxt = findViewById(R.id.Edit_Depn);
     }
 
-    public void calculateZ(View button) throws MathException {
+    public void calculateZ(View button) {
 
         double TA;
         TA = 0;
@@ -136,14 +130,14 @@ public class MainActivity extends Activity implements OnItemSelectedListener {
         X9 = 0.000001;
 
         // get the references to the widgets
-        EditText TAtxt = (EditText) findViewById(R.id.Edit_TotAssets);
-        EditText CAtxt = (EditText) findViewById(R.id.Edit_CurAssets);
-        EditText TDtxt = (EditText) findViewById(R.id.Edit_TotDebt);
-        EditText CDtxt = (EditText) findViewById(R.id.Edit_CurDebt);
-        EditText REtxt = (EditText) findViewById(R.id.Edit_RetEar);
-        EditText EBtxt = (EditText) findViewById(R.id.Edit_Ebit);
+        EditText TAtxt = findViewById(R.id.Edit_TotAssets);
+        EditText CAtxt = findViewById(R.id.Edit_CurAssets);
+        EditText TDtxt = findViewById(R.id.Edit_TotDebt);
+        EditText CDtxt = findViewById(R.id.Edit_CurDebt);
+        EditText REtxt = findViewById(R.id.Edit_RetEar);
+        EditText EBtxt = findViewById(R.id.Edit_Ebit);
 
-        Spinner typespn = (Spinner) findViewById(R.id.type);
+        Spinner typespn = findViewById(R.id.type);
         String msgZ;
 
         // get the users values from the widget references
